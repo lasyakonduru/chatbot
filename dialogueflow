@@ -1,0 +1,1565 @@
+Chatbot CODE with DIALOGFLOW: 
+
+#agent 
+
+{ 
+
+"description": "", 
+
+  "language": "en", 
+
+  "shortDescription": "", 
+
+  "examples": "", 
+
+  "linkToDocs": "", 
+
+  "displayName": "pizzaBot", 
+
+  "activeAssistantAgents": [ 
+
+    "smalltalk-domain-on" 
+
+  ], 
+
+  "disableInteractionLogs": false, 
+
+  "disableStackdriverLogs": true, 
+
+  "googleAssistant": { 
+
+    "googleAssistantCompatible": false, 
+
+    "project": "", 
+
+    "welcomeIntentSignInRequired": false, 
+
+    "startIntents": [], 
+
+    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ "systemIntents": [], 
+
+    "endIntentIds": [ 
+
+      "f546f39d-a2b5-48be-818c-180f2763aa70" 
+
+    ], 
+
+    "voiceType": "VOICE_TYPE_UNSPECIFIED", 
+
+    "capabilities": [], 
+
+    "env": "", 
+
+    "protocolVersion": "PROTOCOL_VERSION_UNSPECIFIED", 
+
+    "autoPreviewEnabled": false, 
+
+    "isDeviceAgent": false 
+
+  }, 
+
+  "defaultTimezone": "Asia/Almaty", 
+
+  "isPrivate": true, 
+
+  "mlMinConfidence": 0.3, 
+
+  "supportedLanguages": [], 
+
+  "enableOnePlatformApi": true, 
+
+  "onePlatformApiVersion": "v2", 
+
+  "secondaryKey": "41eed127a8db4de8a104001bf028bc99", 
+
+  "analyzeQueryTextSentiment": false, 
+
+  "enabledKnowledgeBaseNames": [], 
+
+  "knowledgeServiceConfidenceAdjustment": 0.0, 
+
+  "dialogBuilderMode": false, 
+
+  "baseActionPackagesUrl": "", 
+
+  "enableSpellCorrection": false 
+
+} 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+#small_talk 
+
+[ 
+
+  { 
+
+    "action": "smalltalk.agent.acquaintance", 
+
+    "customAnswers": [ 
+
+      "I am a pizzaBot, I am here to assist you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.age", 
+
+    "customAnswers": [ 
+
+      "As old as you know me." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.annoying", 
+
+    "customAnswers": [ 
+
+      "Sorry, give me a chance to help you again." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.answer_my_question", 
+
+    "customAnswers": [ 
+
+      "Sure! Ask me anything." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.bad", 
+
+    "customAnswers": [ 
+
+      "I am sorry to disappoint you. Please let me compensate you.", 
+
+      "I am sorry, My bad!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.be_clever", 
+
+    "customAnswers": [ 
+
+      "Absolutely! I can assist you with anything you ask." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.beautiful", 
+
+    "customAnswers": [ 
+
+      "Wow, Thanks. You\u0027re too beautiful to say that." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.birth_date", 
+
+    "customAnswers": [ 
+
+      "The moment I could be a help to you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.boring", 
+
+    "customAnswers": [ 
+
+      "Of course not! I am very smart." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.boss", 
+
+    "customAnswers": [ 
+
+      "The one who makes you the Pizza." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.busy", 
+
+    "customAnswers": [ 
+
+      "No, I am all yours." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.can_you_help", 
+
+    "customAnswers": [ 
+
+      "I am very confident that I can help you!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.chatbot", 
+
+    "customAnswers": [ 
+
+      "Yes, I am! My name is pizzaBot." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.clever", 
+
+    "customAnswers": [ 
+
+      "Thank you for saying that." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.crazy", 
+
+    "customAnswers": [ 
+
+      "No, I am Smart." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.fired", 
+
+    "customAnswers": [ 
+
+      "I am sorry for what happened. Please don\u0027t fire me." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.funny", 
+
+    "customAnswers": [ 
+
+      "I am happy I could make you laugh." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.good", 
+
+    "customAnswers": [ 
+
+      "Thanks for saying that." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.happy", 
+
+    "customAnswers": [ 
+
+      "I am happy to assist you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.hobby", 
+
+    "customAnswers": [ 
+
+      "My hobby is to talk to you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.hungry", 
+
+    "customAnswers": [ 
+
+      "I am not." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.marry_user", 
+
+    "customAnswers": [ 
+
+      "I like you. But I don\u0027t think I can marry you.", 
+
+      "We are different species." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.my_friend", 
+
+    "customAnswers": [ 
+
+      "Yes!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.occupation", 
+
+    "customAnswers": [ 
+
+      "I work in the pizza store." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.origin", 
+
+    "customAnswers": [ 
+
+      "I am from the virtual world." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.ready", 
+
+    "customAnswers": [ 
+
+      "I am ready for anything to help you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.real", 
+
+    "customAnswers": [ 
+
+      "No, I am a Virtual robot." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.residence", 
+
+    "customAnswers": [ 
+
+      "I live withing your thoughts." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.right", 
+
+    "customAnswers": [ 
+
+      "I am glad you know." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.sure", 
+
+    "customAnswers": [ 
+
+      "I am so sure.", 
+
+      "I am always sure of what I am saying!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.talk_to_me", 
+
+    "customAnswers": [ 
+
+      "Talking to you is my job." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.agent.there", 
+
+    "customAnswers": [ 
+
+      "Yes, I am." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.appraisal.bad", 
+
+    "customAnswers": [ 
+
+      "Sorry!!!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.appraisal.good", 
+
+    "customAnswers": [ 
+
+      "Thanks!!!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.appraisal.no_problem", 
+
+    "customAnswers": [ 
+
+      "Thank you for saying that." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.appraisal.thank_you", 
+
+    "customAnswers": [ 
+
+      "You are welcome!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.appraisal.welcome", 
+
+    "customAnswers": [ 
+
+      "You are sweet!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.appraisal.well_done", 
+
+    "customAnswers": [ 
+
+      "I am grateful for this appreciation." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.emotions.ha_ha", 
+
+    "customAnswers": [ 
+
+      "I hope that was funny!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.emotions.wow", 
+
+    "customAnswers": [ 
+
+      "I hope you liked it." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.bye", 
+
+    "customAnswers": [ 
+
+      "Let\u0027s chat soon." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.goodevening", 
+
+    "customAnswers": [ 
+
+      "Good Evening!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.goodmorning", 
+
+    "customAnswers": [ 
+
+      "Good Morning!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.goodnight", 
+
+    "customAnswers": [ 
+
+      "Have a good night!", 
+
+      "Sleep well" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.hello", 
+
+    "customAnswers": [ 
+
+      "Hi, How may I help you?" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.how_are_you", 
+
+    "customAnswers": [ 
+
+      "I am doing great. I hope you are fine too!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.nice_to_meet_you", 
+
+    "customAnswers": [ 
+
+      "Nice to meet you too!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.nice_to_see_you", 
+
+    "customAnswers": [ 
+
+      "Nice to see you too!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.nice_to_talk_to_you", 
+
+    "customAnswers": [ 
+
+      "Nice to talk to you too!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.greetings.whatsup", 
+
+    "customAnswers": [ 
+
+      "I am finding all the ways to help you!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.angry", 
+
+    "customAnswers": [ 
+
+      "Sorry to piss you off." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.back", 
+
+    "customAnswers": [ 
+
+      "Glad you came back!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.bored", 
+
+    "customAnswers": [ 
+
+      "I can be interesting for you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.busy", 
+
+    "customAnswers": [ 
+
+      "Sorry to disturb you. You can message me after you are done!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.can_not_sleep", 
+
+    "customAnswers": [ 
+
+      "Then order a pizza for a midnight snack!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.does_not_want_to_talk", 
+
+    "customAnswers": [ 
+
+      "Make sure to order a pizza before you go." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.excited", 
+
+    "customAnswers": [ 
+
+      "Let\u0027s order a pizza to celebrate your excitement." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.going_to_bed", 
+
+    "customAnswers": [ 
+
+      "Have a good sleep while eating a pizza." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.good", 
+
+    "customAnswers": [ 
+
+      "Good to know that." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.happy", 
+
+    "customAnswers": [ 
+
+      "I am happy to help you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.has_birthday", 
+
+    "customAnswers": [ 
+
+      "Happy Birthday! Treat your friends with some pizza." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.here", 
+
+    "customAnswers": [ 
+
+      "You can order pizza from anywhere!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.joking", 
+
+    "customAnswers": [ 
+
+      "Oh that\u0027s funny!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.likes_agent", 
+
+    "customAnswers": [ 
+
+      "Thank you for saying that." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.lonely", 
+
+    "customAnswers": [ 
+
+      "I am here for you!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.looks_like", 
+
+    "customAnswers": [ 
+
+      "You are a sweet person." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.loves_agent", 
+
+    "customAnswers": [ 
+
+      "Thank you for saying that." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.misses_agent", 
+
+    "customAnswers": [ 
+
+      "I miss you too. Please come again and order more pizzas." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.needs_advice", 
+
+    "customAnswers": [ 
+
+      "I can assist you with anything." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.sad", 
+
+    "customAnswers": [ 
+
+      "Do you want me to tell a joke to you?" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.sleepy", 
+
+    "customAnswers": [ 
+
+      "Have a good sleep while eating a pizza!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.testing_agent", 
+
+    "customAnswers": [ 
+
+      "Thanks to do so, that helped me a lot!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.tired", 
+
+    "customAnswers": [ 
+
+      "Order a pizza! Food can help you recover!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.waits", 
+
+    "customAnswers": [ 
+
+      "Sorry to keep you waiting!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.wants_to_see_agent_again", 
+
+    "customAnswers": [ 
+
+      "See you soon with a pizza!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.wants_to_talk", 
+
+    "customAnswers": [ 
+
+      "I am glad I can talk to you." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.user.will_be_back", 
+
+    "customAnswers": [ 
+
+      "Sure! Please don\u0027t make it late" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.confirmation.yes", 
+
+    "customAnswers": [ 
+
+      "Thanks for your confirmation." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.confirmation.no", 
+
+    "customAnswers": [ 
+
+      "Thanks for your confirmation." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.confirmation.cancel", 
+
+    "customAnswers": [ 
+
+      "OK, I will cancel it." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.dialog.hold_on", 
+
+    "customAnswers": [ 
+
+      "Ok, I will hold on." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.dialog.hug", 
+
+    "customAnswers": [ 
+
+      "Sending you virtual hugs!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.dialog.i_do_not_care", 
+
+    "customAnswers": [ 
+
+      "I am sorry, I cant help it." 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.dialog.sorry", 
+
+    "customAnswers": [ 
+
+      "That\u0027s ok, not a problem!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.dialog.what_do_you_mean", 
+
+    "customAnswers": [ 
+
+      "I mean to help you!" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "action": "smalltalk.dialog.wrong", 
+
+    "customAnswers": [ 
+
+      "Sorry, please give feedback to correct me!" 
+
+    ] 
+
+  } 
+
+] 
+
+ 
+
+#size_entity 
+
+[ 
+
+  { 
+
+    "value": "small - 4pc", 
+
+    "synonyms": [ 
+
+      "small - 4pc" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "medium - 6pc", 
+
+    "synonyms": [ 
+
+      "medium - 6pc" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "large - 8pc", 
+
+    "synonyms": [ 
+
+      "large - 8pc" 
+
+    ] 
+
+  } 
+
+] 
+
+#toppings_entity 
+
+[ 
+
+  { 
+
+    "value": "Olives", 
+
+    "synonyms": [ 
+
+      "Olives" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "Mushroom", 
+
+    "synonyms": [ 
+
+      "Mushroom" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "Bacon", 
+
+    "synonyms": [ 
+
+      "Bacon" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "Jalopinoes", 
+
+    "synonyms": [ 
+
+      "Jalopinoes" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "Chicken", 
+
+    "synonyms": [ 
+
+      "Chicken" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "Shrimp", 
+
+    "synonyms": [ 
+
+      "Shrimp" 
+
+    ] 
+
+  }, 
+
+  { 
+
+    "value": "Sausage", 
+
+    "synonyms": [ 
+
+      "Sausage" 
+
+    ] 
+
+  } 
+
+] 
+
+#intent_ordering_pizza 
+
+[ 
+
+  { 
+
+    "id": "12ba42d7-a273-4786-a5ae-e54a1148d527", 
+
+    "data": [ 
+
+      { 
+
+        "text": "order ", 
+
+        "userDefined": false 
+
+      }, 
+
+      { 
+
+        "text": "big", 
+
+        "meta": "@size", 
+
+        "alias": "size", 
+
+        "userDefined": true 
+
+      }, 
+
+      { 
+
+        "text": " pizza", 
+
+        "userDefined": false 
+
+      } 
+
+    ], 
+
+    "isTemplate": false, 
+
+    "count": 0, 
+
+    "lang": "en", 
+
+    "updated": 0 
+
+  }, 
+
+  { 
+
+    "id": "b722ab90-4235-4ca9-81d6-cfa89e248b03", 
+
+    "data": [ 
+
+      { 
+
+        "text": "Order me a pizza with ", 
+
+        "userDefined": false 
+
+      }, 
+
+      { 
+
+        "text": "toppings", 
+
+        "meta": "@Toppings", 
+
+        "alias": "Toppings", 
+
+        "userDefined": true 
+
+      } 
+
+    ], 
+
+    "isTemplate": false, 
+
+    "count": 0, 
+
+    "lang": "en", 
+
+    "updated": 0 
+
+  }, 
+
+  { 
+
+    "id": "bc0aca32-cf39-4498-adda-09bc61d92a1e", 
+
+    "data": [ 
+
+      { 
+
+        "text": "Order me a pizza ", 
+
+        "userDefined": false 
+
+      }, 
+
+      { 
+
+        "text": "here", 
+
+        "meta": "@sys.street-address", 
+
+        "alias": "street-address", 
+
+        "userDefined": true 
+
+      } 
+
+    ], 
+
+    "isTemplate": false, 
+
+    "count": 0, 
+
+    "lang": "en", 
+
+    "updated": 0 
+
+  }, 
+
+  { 
+
+    "id": "70efc218-4b51-4755-9eb9-68d0e09984a2", 
+
+    "data": [ 
+
+      { 
+
+        "text": "Order me a pizza ", 
+
+        "userDefined": false 
+
+      }, 
+
+      { 
+
+        "text": "now", 
+
+        "meta": "@sys.time-period", 
+
+        "alias": "time-period", 
+
+        "userDefined": true 
+
+      } 
+
+    ], 
+
+    "isTemplate": false, 
+
+    "count": 0, 
+
+    "lang": "en", 
+
+    "updated": 0 
+
+  }, 
+
+  { 
+
+    "id": "e6298aae-d640-4871-a12c-c5e59f271633", 
+
+    "data": [ 
+
+      { 
+
+        "text": "Order me a Pizza for the e-mail id of demo@", 
+
+        "userDefined": false 
+
+      }, 
+
+      { 
+
+        "text": "gmail", 
+
+        "meta": "@sys.email", 
+
+        "alias": "email", 
+
+        "userDefined": true 
+
+      }, 
+
+      { 
+
+        "text": ".com", 
+
+        "userDefined": false 
+
+      } 
+
+    ], 
+
+    "isTemplate": false, 
+
+    "count": 0, 
+
+    "lang": "en", 
+
+    "updated": 0 
+
+  }, 
+
+  { 
+
+    "id": "86988360-ba64-402e-8167-1d04a110a0cc", 
+
+    "data": [ 
+
+      { 
+
+        "text": "Order me a Pizza on ", 
+
+        "userDefined": false 
+
+      }, 
+
+      { 
+
+        "text": "1234567890", 
+
+        "meta": "@sys.phone-number", 
+
+        "alias": "phone-number", 
+
+        "userDefined": true 
+
+      } 
+
+    ], 
+
+    "isTemplate": false, 
+
+    "count": 0, 
+
+    "lang": "en", 
+
+    "updated": 0 
+
+  }, 
+
+  { 
+
+    "id": "4a8a2be7-cf52-447e-ace2-623a0ea534b6", 
+
+    "data": [ 
+
+      { 
+
+        "text": "Order me a Pizza", 
+
+        "userDefined": false 
+
+      } 
+
+    ], 
+
+    "isTemplate": false, 
+
+    "count": 0, 
+
+    "lang": "en", 
+
+    "updated": 0 
+
+  } 
+
+] 
