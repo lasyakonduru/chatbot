@@ -1,0 +1,285 @@
+Chatobot CODE: 
+
+import pickle 
+
+import numpy as np 
+
+with open("train_data.txt", "rb") as fp: 
+
+train_Data = pickle.load(fp) 
+
+with open("test_data.txt", "rb") as fp: 
+
+test_Data = pickle.load(fp) 
+
+  
+
+#set up vocabulary (for non-repeating words) 
+
+vocab = set() 
+
+all_data =  test_data + train_data 
+
+for story, question, answer in all_data: 
+
+vocab = vocab.union(set(story)) 
+
+vocab = vocab.union(set(question)) 
+
+vocab.add('yes') 
+
+vocab.add('no') 
+
+vocab_len = len(vocab) + 1 
+
+max_story_len = max([len(data[0]) for data in all_data 
+
+max_story_len = max([len(data[1]) for data in all_data 
+
+  
+
+from keras.preprocessing.sequence import pad_sequences 
+
+from keras.preprocessing.text import Tokenizer 
+
+tokenizer = Tokenizer(filters = []) 
+
+tokenizer.fit_on_texts(vocab) 
+
+tokenizer.word_index 
+
+  
+
+train_story_text = [] 
+
+train_question_text = [] 
+
+train_answer = [] 
+
+for story, question, answer in train_data: 
+
+train_story_text.append(story) 
+
+train_question_text.append(question) 
+
+train_story_seq = tokenizer.texts_to_sequences(train_story_text) 
+
+  
+
+def vectorize_stories(data, word_index = tekenizer.word_index, max_ques_len = max_ques_len): 
+
+X = [] 
+
+Xq = [] 
+
+Y = [] 
+
+for story, query, answer in data: 
+
+x = [word_index[word.lower()] for word in story] 
+
+xq = [word_index[word.lower()] for word in story] 
+
+y = np.zeros(len(word_index) + 1) 
+
+y[word_index[answer]] = 1 
+
+X.append(x) 
+
+Xq.append(xq) 
+
+Y.append(y) 
+
+return(pad_sequences(X, maxlen = max_story_len), 
+
+pad_sequnces(Xq, maxlen = max_ques_len), 
+
+np.array(Y)) 
+
+  
+
+input_train, query_train, answer_train = vectorize_stories(train_data) 
+
+input_test, query_test, answer_test = vectorize_stories(test_data) 
+
+  
+
+from keras.models import Sequential, Model 
+
+from keras.layers.embeddings import Embedding 
+
+from keras.layers import Input, Activation, Dense, Permute, Dropout, add, dot, concatenate, LSTM 
+
+input _sequence = Input((max_story_len)) 
+
+question = Input((max_story_len)) 
+
+  
+
+#input encoder m 
+
+input_encoder_m = Sequential() 
+
+input_encoder_m.add(Embedding(input_dim = vocab_len, output_dim = 64)) 
+
+input_encoder_m.add(Dropout(0.3)) 
+
+  
+
+#input encoder c 
+
+input_encoder_c = Sequential() 
+
+input_encoder_c.add(Embedding(input_dim = vocab_len, output_dim = max_ques_len)) 
+
+input_encoder_c.add(Dropout(0.3)) 
+
+  
+
+#question encoder  
+
+question_encoder = Sequential() 
+
+question_encoder.add(Embedding(input_dim = vocab_len, output_dim = 64, input_lenght = max_ques_len)) 
+
+question_encoder.add(Dropout(0.3)) 
+
+  
+
+#encode the sequence 
+
+input_encoded_m = input_encoder_m(input_sequence) 
+
+input_encoded_c = input_encoder_c(input_sequence) 
+
+question_encoded = question_encoder(question) 
+
+  
+
+match = dot([input_encoded_m, question_encoded], axes = (2,2)) 
+
+match = Activation('softmax')(match) 
+
+response = add([match, input_encoded_c]) 
+
+response = Permute((2,1))(response) 
+
+  
+
+#concatenate 
+
+answer = concatenate([response, question_encoded]) 
+
+answer = LSTM(32)(answer) 
+
+  
+
+answer = Dropout(0.5)(answer) 
+
+answer = Dense(vocab_len)(answer) 
+
+answer = Activation('softmax')(answer) 
+
+model = Model([input_sequence, question], answer) 
+
+model.compile(optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics = ['accuracy']) 
+
+  
+
+history = model.fit([input_train, queries_train], answers_train, batch_size = 32, epochs = 20,  
+
+  validation_data = ([input_test, queries_test], answer_test)) 
+
+  
+
+#plotting the accuracy 
+
+import matplotlib.pyplot as plt 
+
+print(history.history.keys()) 
+
+plt.plot(history.history['accuracy']) 
+
+plt.plot(history.history['val_accuracy']) 
+
+plt.title("Model Accuracy") 
+
+plt.ylabel("Accuracy") 
+
+plt.xlabel("epochs") 
+
+  
+
+#save 
+
+model.save("Chatbot_model") 
+
+  
+
+#evaluation on the test set 
+
+model.load_weights("Chatbot_model") 
+
+pred_results = model.predict(([inputs_test, queries_test])) 
+
+  
+
+#story in string format 
+
+story = ' '.join(word for word in test_data[0][0]) 
+
+  
+
+#Question in string format 
+
+query = ' '.join(word for word in test_data[0][1]) 
+
+  
+
+test_data[0][2] 
+
+  
+
+#predictions for the model 
+
+val_max = np.argmax(pred_results[0]) 
+
+for key, val in tokenizer.word_index.items(): 
+
+if val == val_max: 
+
+k = key 
+
+print("Predicted answer is", K) 
+
+print("Probability of certainity", pred_results[0][val_max]) 
+
+  
+
+#CREATING OUR OWN STORY, ACCORDING TO THE VOCAB 
+
+story = "Mary dropped the football . Sandra discarded apple in the kitchen ." 
+
+story. split() 
+
+my_question = "Is apple in the kitchen?" 
+
+my question.split() 
+
+my_data = [(story.split(), my_question.split(), 'yes')] 
+
+my_story, my_ques, my_ans = vectorize_stories(my_data) 
+
+pred_results = model.predict(([my_story, my_ques])) 
+
+val_max = np.argmax(pred_results[0]) 
+
+for key, val in tokenizer.word_index.items(): 
+
+if val == val_max: 
+
+k = key 
+
+print("Predicted answer is", K) 
+
+print("Probability of certainity", pred_results[0][val_max]) 
